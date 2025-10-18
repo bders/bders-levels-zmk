@@ -181,11 +181,11 @@
         mouse {
             display-name = "Mouse";
             bindings = <
-&trans  &bt BT_CLR_ALL  &trans     &trans      &trans       &trans    &trans  &trans     &trans     &trans         &trans       &trans
-&trans  &trans          &trans     &trans      &trans       &trans    &trans  &trans     &trans     &trans         &trans       &trans
-&trans  &trans          &mkp RCLK  &mkp MCLK   &mkp LCLK    &trans    &trans  &kp RSHFT  &kp RCTRL  &kp RALT       &kp RGUI     &trans
-&trans  &trans          &trans     &kp K_COPY  &kp K_PASTE  &trans    &trans  &kp HOME   &kp END    &kp PAGE_DOWN  &kp PAGE_UP  &trans
-                                   &trans      &trans       &trans    &trans  &trans     &trans
+&trans  &bt BT_CLR_ALL  &bt BT_NXT  &trans      &trans       &trans    &trans  &trans     &trans     &trans         &trans       &trans
+&trans  &trans          &trans      &trans      &trans       &trans    &trans  &trans     &trans     &trans         &trans       &trans
+&trans  &trans          &mkp RCLK   &mkp MCLK   &mkp LCLK    &trans    &trans  &kp RSHFT  &kp RCTRL  &kp RALT       &kp RGUI     &trans
+&trans  &trans          &trans      &kp K_COPY  &kp K_PASTE  &trans    &trans  &kp HOME   &kp END    &kp PAGE_DOWN  &kp PAGE_UP  &trans
+                                    &trans      &trans       &trans    &trans  &trans     &trans
             >;
         };
 
