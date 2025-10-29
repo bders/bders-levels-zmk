@@ -22,6 +22,9 @@ endif # BOARD_LEVELS54_RIGHT
 
 if BOARD_LEVELS54_LEFT || BOARD_LEVELS54_RIGHT
 
+config ZMK_STUDIO_LOCKING
+  default n
+
 config ZMK_SPLIT
   default y
 
