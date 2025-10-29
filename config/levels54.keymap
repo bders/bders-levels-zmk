@@ -183,7 +183,7 @@
             bindings = <
 &studio_unlock  &bt_profile1  &bt_profile2  &bt_profile3  &bt_profile4  &bt BT_CLR    &trans  &trans     &trans     &trans         &trans       &trans
 &trans          &trans        &trans        &trans        &trans        &trans        &trans  &trans     &trans     &trans         &trans       &trans
-&trans          &trans        &mkp RCLK     &mkp MCLK     &mkp LCLK     &trans        &trans  &kp RSHFT  &kp RCTRL  &kp RALT       &kp RGUI     &trans
+&trans          &trans        &mkp RCLK     &mkp MCLK     &mkp LCLK     &tog 7        &trans  &kp RSHFT  &kp RCTRL  &kp RALT       &kp RGUI     &trans
 &trans          &trans        &trans        &kp K_COPY    &kp K_PASTE   &trans        &trans  &kp HOME   &kp END    &kp PAGE_DOWN  &kp PAGE_UP  &trans
                                             &trans        &trans        &trans        &trans  &trans     &trans
             >;
