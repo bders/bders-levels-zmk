@@ -192,11 +192,11 @@
         num {
             display-name = "Numbers";
             bindings = <
-&kp  &kp           &kp     &kp        &kp                 &kp          &kp                   &kp                    &kp     &kp     &kp  &kp
-&kp  &kp ASTERISK  &kp N7  &kp KP_N8  &kp N9              &kp SLASH    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp     &kp     &kp  &kp PIPE
-&kp  &kp MINUS     &kp N4  &kp N5     &hml LEFT_SHIFT N6  &kp PLUS     &kp MINUS             &hmr RSHFT LEFT_BRACE  &trans  &trans  &kp  &kp
-&kp  &kp GRAVE     &kp N1  &kp N2     &kp N3              &kp EQUAL    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans  &kp  &kp
-                           &kp        &kp N0              &kp          &kp                   &kp                    &kp
+&trans  &trans        &trans  &trans     &trans              &trans       &trans                &trans                 &trans  &trans  &trans  &trans
+&trans  &kp ASTERISK  &kp N7  &kp KP_N8  &kp N9              &kp SLASH    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans  &trans  &kp PIPE
+&trans  &kp MINUS     &kp N4  &kp N5     &hml LEFT_SHIFT N6  &kp PLUS     &kp MINUS             &hmr RSHFT LEFT_BRACE  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE     &kp N1  &kp N2     &kp N3              &kp EQUAL    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans  &trans  &trans
+                              &trans     &kp N0              &trans       &trans                &trans                 &trans
             >;
         };
 
