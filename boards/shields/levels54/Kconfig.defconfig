@@ -1,0 +1,25 @@
+if SHIELD_LEVELS54_DONGLE
+
+# 16‑character max name
+config ZMK_KEYBOARD_NAME
+    default "Levels54 Dongle"
+
+# Enable split mode
+config ZMK_SPLIT
+    default y
+
+# Make this build the central role
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+# Number of peripherals (left + right)
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+# Connection pool sizes – peripherals + BT profiles
+config BT_MAX_CONN
+    default 6
+config BT_MAX_PAIRED
+    default 6
+
+endif
