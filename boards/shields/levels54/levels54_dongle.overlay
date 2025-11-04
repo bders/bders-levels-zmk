@@ -1,6 +1,6 @@
-// Dongle overlay for Levels54 using a Prospector-based central.  It
-// provides a mock kscan (no keys), copies the matrix transform, and
-// defines pointing listeners for both halves.
+// Dongle overlay for Levels54 using a Prospector-based central. It provides
+// a mock kscan (no keys), copies the matrix transform, and defines pointing
+// listeners for both halves.
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
@@ -8,6 +8,10 @@
     /* Use a mock scanner—no physical keys on the dongle. */
     chosen {
         zmk,kscan = &mock_kscan;
+        /* Select our matrix transform as the default. This ensures
+         * zmk_matrix_transform_default is generated, preventing link errors.
+         */
+        zmk,matrix-transform = &default;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -17,7 +21,7 @@
         events  = <0>;
     };
 
-    /* Matrix transform copied from boards/arm/levels54/levels54.dts */
+    /* Matrix transform copied from boards/arm/levels54/levels54.dts. */
     default: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -31,8 +35,8 @@
         >;
     };
 
-    /* Define pointing listeners for both halves.  These do not
-     * reference the board DTS, so they compile on any MCU.
+    /* Define pointing listeners for both halves. These are local to this
+     * overlay and do not reference the board DTS, so they compile on any MCU.
      */
     trackball_peripheral_listener: trackball_listener_split {
         compatible = "zmk,pointing-device-split-listener";
