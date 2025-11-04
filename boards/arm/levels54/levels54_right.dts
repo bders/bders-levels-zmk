@@ -61,5 +61,9 @@
 
 // Overrides for the input-split child node
 &trackball_peripheral_split {
-    device = <&trackball_peripheral>;
+    device = <&trackball_peripheral>;  // uses the local/right trackball
+};
+
+&trackball_central_listener {
+    status = "disabled";  // keeps the remote/left trackball inactive
 };
