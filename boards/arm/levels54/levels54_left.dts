@@ -59,7 +59,11 @@
 };
 
 // Overrides for the input listener node
+&trackball_peripheral_listener {
+    status = "disabled";  // disables the remote/right trackball
+};
+
 &trackball_central_listener {
     status = "okay";
-    device = <&trackball_central>;
+    device = <&trackball_central>;  // uses the local/left trackball
 };
