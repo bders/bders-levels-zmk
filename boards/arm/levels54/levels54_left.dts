@@ -29,10 +29,6 @@
     ;
 };
 
-&trackball_peripheral_listener {
-    status = "okay";
-};
-
 &spi0 {
     cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
 
@@ -58,12 +54,20 @@
     };
 };
 
-// Overrides for the input listener node
+/* Disable right-hand (peripheral) trackball on the left half */
 &trackball_peripheral_listener {
-    status = "disabled";  // disables the remote/right trackball
+    status = "disabled";
 };
 
+/* Provide device property for the input-split on the left half.
+ * This tells the input split which physical device should be proxied to the central.
+ */
+&trackball_peripheral_split {
+    device = <&trackball_central>;
+};
+
+/* Leave the left-hand trackball listener enabled */
 &trackball_central_listener {
     status = "okay";
-    device = <&trackball_central>;  // uses the local/left trackball
+    device = <&trackball_central>;
 };
