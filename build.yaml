@@ -2,7 +2,7 @@
 include:
   - board: levels54_left
     shield: settings_reset
-    cmake-args: -DCONFIG_ZMK_STUDIO=n -DCONFIG_USB_DEVICE_STACK=n
+    cmake-args: -DOVERLAY_CONFIG="config/settings_reset.conf"
   - board: levels54_right
     shield: settings_reset
-    cmake-args: -DCONFIG_ZMK_STUDIO=n -DCONFIG_USB_DEVICE_STACK=n
+    cmake-args: -DOVERLAY_CONFIG="config/settings_reset.conf"
