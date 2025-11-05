@@ -8,10 +8,7 @@
     /* Use a mock scanner—no physical keys on the dongle. */
     chosen {
         zmk,kscan = &mock_kscan;
-        /* Select our matrix transform as the default. This ensures
-         * zmk_matrix_transform_default is generated, preventing link errors.
-         */
-        zmk,matrix-transform = &default;
+        zmk,physical-layout = &physical_layout0;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -22,7 +19,7 @@
     };
 
     /* Matrix transform copied from boards/arm/levels54/levels54.dts. */
-    default: keymap_transform0 {
+    default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
         rows    = <5>;
@@ -33,6 +30,13 @@
             /* row3 */ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)      RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
             /* row4 */                      RC(4,3) RC(4,4) RC(4,5)      RC(4,6) RC(4,7) RC(4,8)
         >;
+    };
+
+    {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>;
     };
 
     /* Define pointing listeners for both halves. These are local to this

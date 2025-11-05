@@ -2,7 +2,9 @@
 include:
   - board: levels54_left
     snippet: nrf52840-nosd
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: levels54_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 # build.yaml example
   - board: seeeduino_xiao_ble
     shield: levels54_dongle prospector_adapter
