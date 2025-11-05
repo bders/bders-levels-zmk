@@ -2,7 +2,5 @@
 include:
   - board: levels54_left
     snippet: nrf52840-nosd
-    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
   - board: levels54_right
-    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
 
