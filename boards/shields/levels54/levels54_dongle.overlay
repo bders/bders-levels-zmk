@@ -39,14 +39,13 @@
         transform = <&default>;
     };
 
-    /* Listeners the halves will target via overlays */
-    trackball_split: trackball_listener0 {
-        compatible = "zmk,pointing-device-split-listener";
-        status = "okay";
-    };
+&trackball_peripheral_listener {
+    status = "okay";
+    /* device already set to &trackball_peripheral_split in the base DTS */
+};
 
-    trackball_split2: trackball_listener1 {
-        compatible = "zmk,pointing-device-split-listener";
-        status = "okay";
-    };
+&trackball_central_listener {
+    status = "okay";
+    device = <&trackball_central_split>;
+};
 };
