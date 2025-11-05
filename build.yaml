@@ -1,8 +1,7 @@
 ---
 include:
   - board: levels54_left
-    # Wipe all ZMK settings (NVS). Disable split so the wipe image is tiny and avoids split references.
-    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
   - board: levels54_right
-    # Wipe ZMK settings and also clear any stored BLE bonds on first boot.
     cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
