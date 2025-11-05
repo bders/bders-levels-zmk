@@ -54,20 +54,20 @@
     };
 };
 
-/* Disable right-hand (peripheral) trackball on the left half */
+/* Left half: feed the left sensor into the @1 split and disable the other side */
+&trackball_central_split {
+    device = <&trackball_central>;
+    status = "okay";
+};
+
+&trackball_peripheral_split {
+    status = "disabled";
+};
+
 &trackball_peripheral_listener {
     status = "disabled";
 };
 
-/* Provide device property for the input-split on the left half.
- * This tells the input split which physical device should be proxied to the central.
- */
-&trackball_peripheral_split {
-    device = <&trackball_central>;
-};
-
-/* Leave the left-hand trackball listener enabled */
 &trackball_central_listener {
-    status = "okay";
-    device = <&trackball_central>;
+    status = "disabled";
 };
