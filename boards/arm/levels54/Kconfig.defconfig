@@ -4,14 +4,14 @@ config ZMK_KEYBOARD_NAME
   default "Levels54"
 
 config BOARD
-  default "level54_left"
+  default "level54 left"
 
 endif # BOARD_LEVELS54_LEFT
 
 if BOARD_LEVELS54_RIGHT
 
 config BOARD
-  default "level54_right"
+  default "level54 right"
 
 endif # BOARD_LEVELS54_RIGHT
 
