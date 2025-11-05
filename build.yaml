@@ -8,11 +8,5 @@ include:
 # build.yaml example
   - board: seeeduino_xiao_ble
     shield: levels54_dongle prospector_adapter
-  - board: levels54_left
-    snippet: nrf52840-nosd
-    shield: settings_reset
-  - board: levels54_right
-    shield: settings_reset
-# build.yaml example
 
   
