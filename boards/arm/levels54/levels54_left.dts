@@ -8,6 +8,10 @@
   };
 };
 
+zephyr_udc0: &usbd {
+    status = "okay";
+};
+
 &kscan0 {
   compatible = "zmk,kscan-gpio-matrix";
 
