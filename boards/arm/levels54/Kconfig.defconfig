@@ -22,10 +22,7 @@ config ZMK_STUDIO_LOCKING
 
 config ZMK_SPLIT
   default y
-
-config ZMK_SPLIT_BLE
-  default y
-
+  
 config BT_CTLR
   default BT
 
