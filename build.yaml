@@ -1,6 +1,7 @@
 ---
 include:
   - board: levels54_left
+    snippet: nrf52840-nosd
   - board: levels54_right
 # build.yaml example
   - board: seeeduino_xiao_ble
