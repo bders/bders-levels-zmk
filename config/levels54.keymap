@@ -5,122 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        sqoute {
-            bindings = <&kp SINGLE_QUOTE>;
-            key-positions = <15 20>;
-        };
-
-        dqoute {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <16 19>;
-        };
-
-        kminus {
-            bindings = <&kp MINUS>;
-            key-positions = <43 44>;
-        };
-
-        kunder {
-            bindings = <&kp UNDER>;
-            key-positions = <44 45>;
-        };
-
-        ktab {
-            bindings = <&kp TAB>;
-            key-positions = <14 21>;
-        };
-
-        kcaps {
-            bindings = <&caps_word>;
-            key-positions = <40 43>;
-        };
-
-        kskinny {
-            bindings = <&skinnyarrow>;
-            key-positions = <28 31>;
-        };
-
-        kfat {
-            bindings = <&fatarrow>;
-            key-positions = <28 31 32>;
-        };
-
-        kpipe {
-            bindings = <&pipeopr>;
-            key-positions = <29 30>;
-        };
-
-        kvimsave {
-            bindings = <&vimsave>;
-            key-positions = <50 14>;
-        };
-
-        spc_macro {
-            bindings = <&kp SPACE>;
-            key-positions = <27 32>;
-        };
-    };
-
-    macros {
-        vimsave: vimsave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE &kp COLON &kp W &kp RET>;
-            label = "VIMSAVE";
-        };
-
-        skinnyarrow: skinnyarrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp GREATER_THAN>;
-            label = "SKINNYARROW";
-        };
-
-        fatarrow: fatarrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp GREATER_THAN>;
-            label = "FATARROW";
-        };
-
-        pipeopr: pipeopr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp PIPE &kp GREATER_THAN>;
-            label = "PIPEOPR";
-        };
-
-        bt_profile1: bt_profile1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&out OUT_BLE &bt BT_SEL 0>;
-            label = "BT_PROFILE1";
-        };
-
-        bt_profile2: bt_profile2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&out OUT_BLE &bt BT_SEL 1>;
-            label = "BT_PROFILE2";
-        };
-
-        bt_profile3: bt_profile3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&out OUT_BLE &bt BT_SEL 2>;
-            label = "BT_PROFILE3";
-        };
-
-        bt_profile4: bt_profile4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&out OUT_BLE &bt BT_SEL 3>;
-            label = "BT_PROFILE4";
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         hml: hml {
@@ -167,53 +52,53 @@
     keymap {
         compatible = "zmk,keymap";
 
-        colemak_dh {
-            display-name = "Colemak DH";
+        SplitQWERTY {
+            display-name = "A Layout for Fellow Simpletons";
             bindings = <
-&lt 5 TILDE     &kp N1           &kp N2           &kp N3        &kp N4             &kp N5    &kp N6     &kp N7              &kp N8        &kp N9            &kp N0       &lt 5 SINGLE_QUOTE
-&kp LEFT_ALT    &kp Q            &kp W            &kp F         &kp P              &kp B     &kp J      &kp L               &kp U         &kp Y             &kp SEMI     &mt RIGHT_ALT BSLH
-&sk LEFT_SHIFT  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G     &kp M      &hmr RIGHT_SHIFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O  &sk RIGHT_SHIFT
-&kp LCTRL       &kp Z            &kp X            &kp C         &kp D              &kp V     &kp K      &kp H               &kp COMMA     &kp DOT           &lt 6 SLASH  &kp RCTRL
-                                                  &kp LEFT_GUI  &lt 4 ESCAPE       &tog 1    &lt 2 RET  &kp BACKSPACE       &lt 3 DELETE
+&kp GRAVE              &kp NUMBER_1  &kp N2  &kp N3        &kp N4            &kp N5         &kp N6       &kp N7             &kp N8           &kp N9   &kp N0         &kp BACKSPACE
+&kp TAB                &kp Q         &kp W   &kp E         &kp R             &kp T          &kp Y        &kp U              &kp I            &kp O    &kp P          &kp SQT
+&mt LEFT_ALT CAPSLOCK  &kp A         &kp S   &kp D         &kp F             &kp G          &lt 1 H      &kp J              &kp K            &kp L    &kp SEMICOLON  &kp ENTER
+&kp LEFT_SHIFT         &kp Z         &kp X   &kp C         &kp V             &kp B          &kp N        &kp M              &kp COMMA        &kp DOT  &kp SLASH      &kp LEFT_WIN
+                                             &kp LEFT_GUI  &kp LEFT_CONTROL  &lt 3 SPACE    &lt 2 SPACE  &kp RIGHT_CONTROL  &lt 2 RIGHT_ALT
             >;
         };
 
         mouse {
             display-name = "Mouse";
             bindings = <
-&trans  &trans  &trans     &trans      &trans       &trans    &trans  &trans     &trans     &trans         &trans       &trans
-&trans  &trans  &trans     &trans      &trans       &trans    &trans  &trans     &trans     &trans         &trans       &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK   &mkp LCLK    &trans    &trans  &kp RSHFT  &kp RCTRL  &kp RALT       &kp RGUI     &trans
-&trans  &trans  &trans     &kp K_COPY  &kp K_PASTE  &trans    &trans  &kp HOME   &kp END    &kp PAGE_DOWN  &kp PAGE_UP  &trans
-                           &trans      &trans       &trans    &trans  &trans     &trans
+&studio_unlock  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &trans  &trans     &trans     &trans         &trans       &trans
+&trans          &trans        &trans        &trans        &trans        &trans        &trans  &trans     &trans     &trans         &trans       &trans
+&trans          &trans        &mkp RCLK     &mkp MCLK     &mkp LCLK     &tog 7        &trans  &kp RSHFT  &kp RCTRL  &kp RALT       &kp RGUI     &trans
+&trans          &trans        &trans        &kp K_COPY    &kp K_PASTE   &trans        &trans  &kp HOME   &kp END    &kp PAGE_DOWN  &kp PAGE_UP  &trans
+                                            &trans        &trans        &trans        &trans  &trans     &trans
+            >;
+        };
+
+        NavFunc {
+            display-name = "NavFunc";
+            bindings = <
+&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5     &trans         &trans          &trans          &trans           &trans           &kp DELETE
+&trans  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &kp PAGE_UP    &kp HOME        &kp UP_ARROW    &kp END          &kp PRINTSCREEN  &trans
+&trans  &kp F11  &kp F12  &trans  &trans  &trans     &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp SCROLLLOCK   &trans
+&trans  &trans   &trans   &trans  &trans  &trans     &trans         &trans          &trans          &trans           &trans           &trans
+                          &trans  &trans  &trans     &trans         &trans          &trans
             >;
         };
 
         num {
             display-name = "Numbers";
             bindings = <
-&trans  &trans        &trans  &trans  &trans              &trans       &trans         &trans                 &trans                  &trans           &trans          &trans
-&trans  &kp ASTERISK  &kp N7  &kp N8  &kp N9              &kp SLASH    &kp BACKSLASH  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS   &kp PIPE         &trans          &trans
-&trans  &kp MINUS     &kp N4  &kp N5  &hml LEFT_SHIFT N6  &kp PLUS     &kp PERCENT    &hmr RSHFT LEFT_BRACE  &hmr RCTRL RIGHT_BRACE  &hmr RALT COLON  &hmr RGUI SEMI  &none
-&trans  &kp GRAVE     &kp N1  &kp N2  &kp N3              &kp EQUAL    &trans         &kp LEFT_BRACKET       &kp RIGHT_BRACKET       &trans           &trans          &trans
-                              &trans  &kp N0              &trans       &trans         &trans                 &trans
-            >;
-        };
-
-        func {
-            display-name = "Function";
-            bindings = <
-&trans  &trans  &trans  &trans   &trans   &trans     &trans  &trans     &trans     &trans    &trans    &trans
-&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &trans  &trans     &trans     &trans    &trans    &trans
-&kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &trans
-&trans  &trans  &trans  &trans   &trans   &trans     &trans  &trans     &trans     &trans    &trans    &trans
-                        &trans   &trans   &trans     &trans  &trans     &trans
+&kp ESCAPE  &trans           &trans           &trans           &trans           &trans          &trans     &trans                &trans                 &trans  &trans  &kp DELETE
+&trans      &kp KP_NUMLOCK   &kp KP_NUMBER_7  &kp KP_N8        &kp N9           &kp KP_EQUAL    &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans  &kp PIPE
+&trans      &kp MINUS        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS        &kp MINUS  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans  &trans
+&trans      &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL       &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans  &trans
+                                              &trans           &trans           &trans          &trans     &trans                &trans
             >;
         };
 
         nav {
             bindings = <
-&trans  &trans        &trans        &trans     &trans          &trans         &trans  &trans    &trans    &trans         &trans       &trans
+&trans  &trans        &trans        &trans     &trans          &trans         &trans  &trans    &trans    &trans         &trans       &kp DELETE
 &trans  &trans        &trans        &trans     &trans          &trans         &trans  &trans    &trans    &trans         &trans       &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans         &trans  &kp LEFT  &kp DOWN  &kp UP         &kp RIGHT    &trans
 &trans  &trans        &trans        &trans     &kp RS(K_COPY)  &kp K_PASTE    &trans  &kp HOME  &kp END   &kp PAGE_DOWN  &kp PAGE_UP  &trans
@@ -225,11 +110,11 @@
 
         prog {
             bindings = <
-&none   &studio_unlock  &none  &none  &none  &bootloader    &bootloader  &none         &none         &none           &none         &none
-&none   &none           &none  &none  &none  &none          &none        &bt_profile1  &bt_profile2  &bt_profile3    &bt_profile4  &none
-&none   &none           &none  &none  &none  &sys_reset     &sys_reset   &none         &none         &none           &none         &none
-&tog 0  &none           &none  &none  &none  &none          &none        &none         &none         &bt BT_CLR_ALL  &out OUT_TOG  &bt BT_CLR
-                               &none  &none  &none          &none        &none         &none
+&trans  &studio_unlock  &trans  &trans  &trans  &bootloader    &bootloader  &trans  &trans  &trans          &trans        &trans
+&trans  &trans          &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans          &trans        &trans
+&trans  &trans          &trans  &trans  &trans  &sys_reset     &sys_reset   &trans  &trans  &trans          &trans        &trans
+&tog 0  &trans          &trans  &trans  &trans  &trans         &trans       &trans  &trans  &bt BT_CLR_ALL  &out OUT_TOG  &bt BT_CLR
+                                &trans  &trans  &trans         &trans       &trans  &trans
             >;
 
             label = "Brogram";
@@ -245,6 +130,26 @@
             >;
 
             label = "Media";
+        };
+
+        Gaming {
+            bindings = <
+&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5       &kp N6     &kp N7     &kp N8     &kp N9   &kp N0    &kp BSPC
+&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T        &kp Y      &kp U      &kp I      &kp O    &kp P     &kp SQT
+&kp CAPS   &kp A   &kp S   &kp D     &kp F      &kp G        &lt 1 H    &kp J      &kp K      &kp L    &kp SEMI  &kp RET
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B        &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &to 0
+                           &kp LALT  &kp LCTRL  &kp SPACE    &kp SPACE  &kp RCTRL  &kp RALT
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
         };
     };
 };
