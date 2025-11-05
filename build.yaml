@@ -1,9 +1,23 @@
 ---
 include:
+  # Normal firmware for LEFT with Studio (optional)
   - board: levels54_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  # Minimal settings reset images (RIGHT + LEFT)
   - board: levels54_right
     shield: settings_reset
+    cmake-args: >
+      -DCONFIG_ZMK_STUDIO=n
+      -DCONFIG_ZMK_POINTING=n
+      -DCONFIG_ZMK_SPLIT=n
+      -DCONFIG_USB_DEVICE_STACK=n
+
   - board: levels54_left
     shield: settings_reset
+    cmake-args: >
+      -DCONFIG_ZMK_STUDIO=n
+      -DCONFIG_ZMK_POINTING=n
+      -DCONFIG_ZMK_SPLIT=n
+      -DCONFIG_USB_DEVICE_STACK=n
