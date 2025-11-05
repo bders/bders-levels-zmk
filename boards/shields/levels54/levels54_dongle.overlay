@@ -37,6 +37,7 @@
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
+        };
     };
 
     /* Define pointing listeners for both halves. These are local to this
