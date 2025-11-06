@@ -6,6 +6,6 @@ include:
 
   - board: levels54_left
     snippet: nrf52840-nosd
-    shield: settings_reset
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
   - board: levels54_right
-    shield: settings_reset
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
