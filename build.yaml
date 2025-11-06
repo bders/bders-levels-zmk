@@ -4,3 +4,8 @@ include:
     snippet: nrf52840-nosd
   - board: levels54_right
 
+  - board: levels54_left
+    snippet: nrf52840-nosd
+    shield: settings_reset
+  - board: levels54_right
+    shield: settings_reset
