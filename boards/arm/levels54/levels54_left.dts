@@ -31,6 +31,7 @@
 
 &trackball_peripheral_listener {
     status = "okay";
+    layers = <1>;
 };
 
 &spi0 {
@@ -62,4 +63,5 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
+    layers = <1>;
 };
