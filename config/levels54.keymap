@@ -49,6 +49,37 @@
         };
     };
 
+        macros {
+
+        bt_profile1: bt_profile1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 0>;
+            label = "BT_PROFILE1";
+        };
+
+        bt_profile2: bt_profile2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 1>;
+            label = "BT_PROFILE2";
+        };
+
+        bt_profile3: bt_profile3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 2>;
+            label = "BT_PROFILE3";
+        };
+
+        bt_profile4: bt_profile4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 3>;
+            label = "BT_PROFILE4";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
