@@ -49,8 +49,7 @@
         };
     };
 
-        macros {
-
+    macros {
         bt_profile1: bt_profile1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -97,7 +96,7 @@
         mouse {
             display-name = "Mouse";
             bindings = <
-&sys_reset  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR_ALL    &trans  &trans     &trans     &trans         &trans       &trans
+&sys_reset  &bt_profile1  &bt_profile2  &bt_profile3  &bt_profile4  &bt BT_CLR_ALL    &trans  &trans     &trans     &trans         &trans       &trans
 &trans      &trans        &trans        &trans        &trans        &trans            &trans  &trans     &trans     &trans         &trans       &trans
 &trans      &trans        &mkp RCLK     &mkp MCLK     &mkp LCLK     &tog 7            &trans  &kp RSHFT  &kp RCTRL  &kp RALT       &kp RGUI     &trans
 &trans      &trans        &trans        &kp K_COPY    &kp K_PASTE   &trans            &trans  &kp HOME   &kp END    &kp PAGE_DOWN  &kp PAGE_UP  &sys_reset
