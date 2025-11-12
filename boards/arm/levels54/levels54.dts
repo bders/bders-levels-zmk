@@ -94,6 +94,7 @@
             	<&zip_xy_to_scroll_mapper>;
     	};
 	};
+};
 
 &pinctrl {
     spi0_default: spi0_default {
