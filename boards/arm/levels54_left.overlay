@@ -5,7 +5,10 @@
 
     mouse_layer {
         layers = <1>;
-        input-processors = <&zip_ble_report_rate_limit>;
+        input-processors
+        = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_XY_SWAP)>
+        , <&zip_xy_scaler 1 1>
+        ;
     };
 };
 
