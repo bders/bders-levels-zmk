@@ -1,1 +1,7 @@
+&trackball_peripheral_split{
+    status = "okay";
+    device = <&trackball_peripheral>; 
+    layers = <1>;
+    input-processors = <&zip_ble_report_rate_limit>;
+    };
 
