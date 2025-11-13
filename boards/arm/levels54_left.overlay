@@ -1,8 +1,7 @@
-/* Central sensor on the left half */
+
 &trackball_central_listener {
     status = "okay";
-    device = <&trackball_central>;     /* or <&pmw3610> if that is your label */
-    /delete-property/ input-processors; /* ensure no always-on processors */
+    device = <&trackball_central>;
 
     mouse_layer {
         layers = <1>;
@@ -10,7 +9,6 @@
     };
 };
 
-/* Events coming from the split peripheral into the central half */
 &trackball_peripheral_split_listener {
     status = "okay";
     device = <&trackball_peripheral>;  /* if your split device is &trackball_peripheral_split, use that */
