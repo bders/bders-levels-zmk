@@ -1,6 +1,24 @@
+/* The central-side listener must not exist on the right build */
+ / {
+     /delete-node/ &trackball_central_listener;
+ };
+
+/* If a split-listener node exists in your shared DTS, keep it disabled on the right */
 &trackball_peripheral_split_listener {
+    status = "disabled";
+    /delete-property/ device;
+    /delete-property/ input-processors;
+};
+
+/* Optional: if you have a local right-side listener you want active on the peripheral,
+   uncomment and point it at the real sensor label.
+&trackball_peripheral_listener {
     status = "okay";
     device = <&trackball_peripheral>;
-    layers = <1>;
-    input-processors = <&zip_ble_report_rate_limit>;
+    /delete-property/ input-processors;
+    mouse_layer {
+        layers = <1>;
+        input-processors = <&zip_ble_report_rate_limit>;
+    };
 };
+*/
