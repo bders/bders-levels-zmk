@@ -1,10 +1,15 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
-    layers = <1>;
-    input-processors =      input-processors 
-        = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-        , <&zip_xy_scaler 1 10>
-        , <&zip_xy_to_scroll_mapper>
-        ;
+
+    mouse_layer {
+        // Only apply these processors when layer 1 (your mouse layer) is active
+        layers = <1>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+            , <&zip_xy_scaler 1 10>
+            , <&zip_xy_to_scroll_mapper>
+            ;
+        // Add 'process-next;' here if you later chain more overrides
+    };
 };
