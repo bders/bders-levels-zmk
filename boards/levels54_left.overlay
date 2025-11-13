@@ -2,5 +2,9 @@
     status = "okay";
     device = <&trackball_central>;
     layers = <1>;
-    input-processors = <&zip_ble_report_rate_limit>;
+    input-processors =      input-processors 
+        = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+        , <&zip_xy_scaler 1 10>
+        , <&zip_xy_to_scroll_mapper>
+        ;
 };
