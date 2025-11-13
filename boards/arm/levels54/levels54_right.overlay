@@ -1,4 +1,4 @@
-&&trackball_peripheral_split_listener {
+&trackball_peripheral_split_listener {
     status = "okay";
     device = <&trackball_peripheral>;
     layers = <1>;
