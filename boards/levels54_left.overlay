@@ -8,7 +8,7 @@
 
 &trackball_peripheral_split_listener {
     status = "okay";
-    device = <&trackball_peripheral>;  /* if your split device is &trackball_peripheral_split, use that */
+    device = <&trackball_peripheral>; 
     layers = <1>;
     input-processors = <&zip_ble_report_rate_limit>;
     };
